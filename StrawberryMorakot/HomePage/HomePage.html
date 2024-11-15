@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STRAWBERRY MORAKOT</title>
+  <link rel="stylesheet" href="HomePage_Style.css">
+  <link rel="stylesheet" href="../index.css">
+  <style>
+      @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+  </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="brand">STRAWBERRY MORAKOT</div>
+        <div class="main-nav-wrapper">
+          <ul class="main-nav">
+            <li><a href="HomePage.html">HOME</a></li>
+            <li><a href="../SearchingPage/SearchingPage.html">BOOKING</a></li>
+            <li><a href="#">CART</a></li>
+            <li><a href="../MyTicket/MyTicket.html">MY TICKET</a></li>
+            <li><a href="#">ABOUT US</a></li>
+          </ul>
+        </div>
+        <ul class="auth-nav">
+          <li><a href="../Login_signup/Login_signup.html" id="login-btn">Log in</a></li>
+          <li><a href="../Login_signup/Login_signup.html" id="signup-btn" class="signup-btn">Sign up</a></li>
+          <li><a href="#" id="auth-icon" style="display:none;">👤</a></li>
+        </ul>                
+      </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <h1>STRAWBERRY MORAKOT</h1>
+    <p>The easy way to book, manage, and track your train tickets.</p>
+    <p>Fast bookings, real-time updates, and seamless travel planning—all in one place.</p>
+    <button onclick="window.location.href='../SearchingPage/SearchingPage.html'">
+    BOOK YOUR TICKET NOW</button>
+  </section>
+</main>
+
+<footer>
+  <img src="/Users/chadang/Desktop/SIIT_logo.png" alt="SIIT_logo">
+</footer>
+
+<script>
+  function updateAuthUI() {
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    const loginBtn = document.getElementById('login-btn');
+    const signupBtn = document.getElementById('signup-btn');
+    const authIcon = document.getElementById('auth-icon');
+
+    if (isLoggedIn) {
+      loginBtn.style.display = 'none';
+      signupBtn.style.display = 'none';
+      authIcon.style.display = 'inline';
+    } else {
+      loginBtn.style.display = 'inline';
+      signupBtn.style.display = 'inline';
+      authIcon.style.display = 'none';
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', updateAuthUI);
+</script>
+
+</body>
+</html>

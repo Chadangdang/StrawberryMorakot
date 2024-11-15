@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strawberry Morakot - Login</title>
+  <link rel="stylesheet" href="Login_signup.css">
+</head>
+<body>
+  <header>
+    <div class="brand">STRAWBERRY MORAKOT</div>
+  </header>
+  
+  <div class="form-container">
+    <div class="form-toggle">
+      <button id="login-btn" class="toggle-btn active">Log in</button>
+      <button id="signup-btn" class="toggle-btn">Sign up</button>
+    </div>
+
+    <!-- Login Form -->
+    <form id="login-form" class="form-content" onsubmit="handleLogin(event)">
+        <input type="text" placeholder="User Name" required>
+        <div class="password-container">
+          <input type="password" placeholder="Enter Password" required id="login-password">
+          <span class="toggle-password" onclick="togglePassword('login-password')">👁️</span>
+        </div>
+        <label class="checkbox"><input type="checkbox"> Remember Me</label>
+        <button type="submit" class="submit-btn">Log in</button>
+      </form>
+    
+    <!-- Signup Form (Initially Hidden) -->
+    <form id="signup-form" class="form-content" style="display: none;">
+      <input type="text" placeholder="User Name" required>
+      <input type="email" placeholder="Email" required>
+      <div class="password-container">
+        <input type="password" placeholder="Enter Password" required id="signup-password">
+        <span class="toggle-password" onclick="togglePassword('signup-password')">👁️</span>
+      </div>
+      <label class="checkbox"><input type="checkbox"> I agree to the terms & conditions</label>
+      <button class="submit-btn">Sign up</button>
+    </form>
+  </div>
+  
+  <script src="Login_signup.js">
+     function switchForm(form) {
+      document.getElementById('login-form').style.display = form === 'login' ? 'block' : 'none';
+      document.getElementById('signup-form').style.display = form === 'signup' ? 'block' : 'none';
+      document.getElementById('login-btn').classList.toggle('active', form === 'login');
+      document.getElementById('signup-btn').classList.toggle('active', form === 'signup');
+    }
+
+    function handleLogin(event) {
+      event.preventDefault();
+      localStorage.setItem('isLoggedIn', 'true');
+      window.location.href = 'index.html';
+    }
+
+    function handleSignup(event) {
+      event.preventDefault();
+      window.location.href = 'index.html';
+    }
+
+    function togglePassword(id) {
+      const passwordField = document.getElementById(id);
+      if (passwordField.type === 'password') {
+        passwordField.type = 'text';
+      } else {
+        passwordField.type = 'password';
+      }
+    }
+  </script>
+</body>
+</html>

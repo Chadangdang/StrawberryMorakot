@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STRAWBERRY MORAKOT</title>
+  <link rel="stylesheet" href="MyTicket.css">
+  <link rel="stylesheet" href="../index.css">
+  <style>
+      @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+  </style>
+</head>
+<body>
+
+<header>
+    <nav>
+      <div class="brand">STRAWBERRY MORAKOT</div>
+      <div class="main-nav-wrapper">
+        <ul class="main-nav">
+          <li><a href="../HomePage/HomePage.html">HOME</a></li>
+          <li><a href="../SearchingPage/SearchingPage.html">BOOKING</a></li>
+          <li><a href="#">CART</a></li>
+          <li><a href="#">MY TICKET</a></li>
+          <li><a href="#">ABOUT US</a></li>
+        </ul>
+      </div>
+      <ul class="auth-nav">
+        <li><a href="../Login_signup/Login_signup.html" id="login-btn">Log in</a></li>
+        <li><a href="../Login_signup/Login_signup.html" id="signup-btn" class="signup-btn">Sign up</a></li>
+        <li><a href="#" id="auth-icon" style="display:none;">👤</a></li>
+      </ul>    
+    </nav>
+  </header>
+  
+
+<main>
+    <div class="topper"><h2>MY TICKET</h2></div>
+    <div><h3>Show Your Ticket to the Train Staff</h3></div>
+    <p>Please present your E-ticket by showing the barcode below to the train staff when requested. Simply scan the barcode at the station or 
+        on the train for a smooth and hassle-free boarding experience.</p>
+    <div class="booking-form">
+    </div>
+
+    <!-- Ticket results section -->
+    <div id="ticket-results" style="display: none;">
+        <!-- Example of ticket/ wait for the backend -->
+        <div class="ticket">
+            <p>15:10 Bangkok - 15:41 Ayutthaya</p>
+            <p>Train number #21</p>
+            <p>20 THB Per person (adult)</p>
+            <button>Select</button>
+        </div>
+    </div>
+</main>
+
+<footer>
+  <img src="/Users/chadang/Desktop/SIIT_logo.png" alt="SIIT_logo">
+</footer>
+
+<script>
+  // Set the min and max dates for the date input
+  const today = new Date();
+  const dd = String(today.getDate()).padStart(2, '0');
+  const mm = String(today.getMonth() + 1).padStart(2, '0'); // January is 0
+  const yyyy = today.getFullYear();
+
+  const minDate = `${yyyy}-${mm}-${dd}`;
+  const maxDate = new Date(today);
+  maxDate.setDate(today.getDate() + 7);
+  const maxDd = String(maxDate.getDate()).padStart(2, '0');
+  const maxMm = String(maxDate.getMonth() + 1).padStart(2, '0');
+  const maxYyyy = maxDate.getFullYear();
+  const maxDateStr = `${maxYyyy}-${maxMm}-${maxDd}`;
+
+  const dateInput = document.getElementById('date');
+  dateInput.setAttribute('min', minDate);
+  dateInput.setAttribute('max', maxDateStr);
+
+  // Show ticket results on search
+  document.querySelector('.search-btn button').addEventListener('click', function() {
+    document.getElementById('ticket-results').style.display = 'block';
+  });
+</script>
+
+</body>
+</html>

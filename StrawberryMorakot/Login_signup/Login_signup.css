@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Jost', sans-serif;
+  }
+  
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to bottom, #91021E, #1647A2);
+    color: #333;
+  }
+  
+  header {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  
+  .form-container {
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    width: 500px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    text-align: center;
+  }
+  
+  .form-toggle {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .password-container {
+    position: relative;
+    width: 100%;
+  }
+  
+  .password-container input[type="password"],
+  .password-container input[type="text"] {
+    width: 100%; /* Ensure the input field takes the full width */
+    padding-right: 35px; /* Leave space for the icon */
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #666; /* Adjust color as needed */
+  }  
+  
+  .toggle-btn {
+    background: none;
+    border: none;
+    font-weight: bold;
+    padding: 10px 40px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #666;
+  }
+  
+  .toggle-btn.active {
+    background: linear-gradient(to right, #91021E, #1647A2);
+    color: #fff;
+    border-radius: 50px;
+  }
+  
+  .form-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-content input[type="text"],
+  .form-content input[type="email"],
+  .form-content input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+  }
+  
+  .checkbox {
+    font-size: 0.9em;
+    color: #666;
+    text-align: left;
+  }
+  
+  .submit-btn {
+    background: linear-gradient(to right, #91021E, #1647A2);
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .submit-btn:hover {
+    background: linear-gradient(to right, #1647A2, #91021E);
+  }
+  
