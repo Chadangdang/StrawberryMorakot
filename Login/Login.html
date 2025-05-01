@@ -27,7 +27,7 @@
   <script>
     // Toggle password visibility
     function togglePassword() {
-      const passwordField = document.getElementById('password');
+      const passwordField = document.getElementById('pass');
       if (passwordField.type === 'password') {
         passwordField.type = 'text';
       } else {
@@ -77,7 +77,7 @@
       alert(responseData.message);
 
       // Redirect to homepage with username and ID in URL
-      window.location.href = `../Home/Home.html?username=${encodeURIComponent(username)}&id=${encodeURIComponent(userId)}`;
+      window.location.href = `/StrawberryMorakot/Home/Home.html?username=${encodeURIComponent(username)}&id=${encodeURIComponent(userId)}`;
     } else {
       alert(responseData.message); // Display error message from server
     }
